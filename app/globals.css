@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Design tokens mirrored from the Figma file (BUBKA SPORTS LAB · Landing).
+   Consumed as Tailwind utilities, e.g. text-accent, bg-card, border-hairline. */
+@theme {
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-accent: #d7ff00;
+
+  /* Text ramp */
+  --color-body: #e4e4e7;
+  --color-muted: #9ca3af;
+  --color-faint: #71717a;
+
+  /* Surfaces */
+  --color-card: rgba(255, 255, 255, 0.04);
+  --color-card-strong: rgba(255, 255, 255, 0.06);
+  --color-hairline: rgba(255, 255, 255, 0.1);
+  --color-hairline-strong: rgba(255, 255, 255, 0.16);
+
+  --font-display: var(--font-bebas-neue), "Arial Narrow", Impact, sans-serif;
+  --font-sans: var(--font-inter), Arial, Helvetica, sans-serif;
+
+  --radius-card: 6px;
+}
+
+@layer base {
+  html {
+    /* Guards against sub-pixel wide children forcing a horizontal scrollbar. */
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
