@@ -11,13 +11,17 @@ import { hero } from "@/content/hero";
  * "section · hero" — 1440 x 900 desktop / 390 x 600 mobile.
  *
  * Vertical rhythm is padding-driven so wrapped text can never overflow the
- * section: nav (57) + 100 top, then 18 / 24 / 80 gaps, then 100 bottom.
+ * section: nav (57) + 100 top, then 73 / 79 / 80 gaps, then 100 bottom.
+ *
+ * The min-heights hold the banner at its designed size regardless of how many
+ * lines the headline runs to: 600 + the 64 the fixed nav overlays on mobile,
+ * 900 on desktop.
  */
 export function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative isolate overflow-hidden pt-[164px] pb-10 lg:min-h-[900px] lg:pt-[157px] lg:pb-[100px]"
+      className="relative isolate min-h-[664px] overflow-hidden pt-[164px] pb-10 lg:min-h-[900px] lg:pt-[157px] lg:pb-[100px]"
     >
       {/* Anchored right so the athlete stays in frame as the 1440-wide plate
           is cropped; centred on mobile, where the crop is severe and the copy

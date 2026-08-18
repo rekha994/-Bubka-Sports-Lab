@@ -12,10 +12,13 @@ import { closingBackdrop } from "@/content/cta";
  * the two need a common positioned ancestor. Wrapping the footer in a plain
  * <div> keeps its `contentinfo` landmark intact, since that mapping depends on
  * the nearest sectioning ancestor being <body>.
+ *
+ * Min-heights match the design's media area: 390x882 on mobile (CTA 316 +
+ * footer 566) and 1440x936 on desktop (588 + 348).
  */
 export function ClosingBackdrop({ children }: { children: ReactNode }) {
   return (
-    <div className="relative isolate overflow-hidden bg-ink">
+    <div className="relative isolate min-h-[882px] overflow-hidden bg-ink lg:min-h-[936px]">
       {/* Graded still underneath: covers slow loads, unsupported formats and
           reduced-motion visitors without a flash of black. */}
       <Image
