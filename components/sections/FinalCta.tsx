@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Headline } from "@/components/ui/Headline";
@@ -8,30 +6,19 @@ import { finalCta } from "@/content/cta";
 /**
  * "section · Final CTA" — 1440 x 588 desktop / 390 x 316 mobile.
  *
- * Larger headline than the other sections (146/126 vs 80/69) with tighter
+ * Larger headline than the other sections (146/126 vs 76/69) with tighter
  * 20px gaps, so it composes Eyebrow/Headline directly rather than reusing
  * SectionHeading's scale.
+ *
+ * Transparent by design: ClosingBackdrop supplies the video that runs behind
+ * this section and the footer together.
  */
 export function FinalCta() {
   return (
     <section
       aria-labelledby="final-cta-heading"
-      className="relative isolate overflow-hidden bg-ink py-10 lg:py-[100px]"
+      className="relative py-10 lg:py-[100px]"
     >
-      <Image
-        src={finalCta.background.src}
-        alt={finalCta.background.alt}
-        fill
-        sizes="100vw"
-        className="-z-10 object-cover"
-      />
-      {/* Mobile-only scrim, mirroring the design: the desktop plate is already
-          graded, but the mobile frame adds a scrim for legibility. */}
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0.8)_100%)] lg:hidden"
-      />
-
       <Container>
         <Eyebrow>{finalCta.eyebrow}</Eyebrow>
 

@@ -29,7 +29,7 @@ const headingClass =
  */
 export function SiteFooter() {
   return (
-    <footer className="border-t border-hairline bg-ink">
+    <footer className="border-t border-hairline">
       <div className="mx-auto w-full max-w-[1440px] px-5 pt-10 pb-10 md:px-10 lg:px-[120px] lg:pt-16 lg:pb-14">
         <div className="grid gap-8 lg:grid-cols-[440px_520px_1fr]">
           {/* Brand */}

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Headline } from "@/components/ui/Headline";
+import { MediaScrim } from "@/components/ui/MediaScrim";
 import { StatsBar } from "@/components/ui/StatsBar";
 import { hero } from "@/content/hero";
 
@@ -45,7 +46,7 @@ export function Hero() {
           >
             <source src={hero.video} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.62)_0%,rgba(5,5,5,0.28)_36%,rgba(5,5,5,0.48)_72%,rgba(5,5,5,0.98)_100%)]" />
+          <MediaScrim />
         </div>
       ) : (
         /* Without the video, the still needs the mobile scrim it had before:
